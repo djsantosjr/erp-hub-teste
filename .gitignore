@@ -57,3 +57,4 @@ apps/web/test-results/
 *.swp
 *.swo
 apps/api/.env.example.bak
+apps/api/.env.example.bak
