@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class NfItem extends Model
 {
+    protected $table = 'nf_itens';
+    
     protected $fillable = [
         'nf_id',
         'produto_id',

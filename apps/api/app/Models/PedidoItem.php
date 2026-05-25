@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PedidoItem extends Model
 {
+    protected $table = 'pedido_itens';
+    
     protected $fillable = [
         'pedido_id',
         'produto_id',

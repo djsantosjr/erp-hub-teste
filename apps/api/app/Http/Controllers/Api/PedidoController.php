@@ -122,18 +122,21 @@ class PedidoController extends Controller
 
     public function confirmar(ConfirmarPedidoRequest $request, Pedido $pedido): JsonResponse
     {
+        $this->authorize('confirmar', $pedido);    
         $pedido = (new ConfirmarPedidoAction)->execute($pedido);
         return response()->json($pedido);
     }
 
     public function faturar(FaturarPedidoRequest $request, Pedido $pedido): JsonResponse
     {
+        $this->authorize('faturar', $pedido);   
         $nf = (new FaturarPedidoAction)->execute($pedido);
         return response()->json($nf->load(['itens', 'contasReceber']), 200);
     }
 
     public function cancelar(CancelarPedidoRequest $request, Pedido $pedido): JsonResponse
     {
+        $this->authorize('cancelar', $pedido);
         $pedido = (new CancelarPedidoAction)->execute($pedido);
         return response()->json($pedido);
     }
